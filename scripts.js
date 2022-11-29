@@ -10,9 +10,9 @@ function calculateCellWidth() {
 
 function createCell(cellWidth) {
   const cell = document.createElement('div');
-  cell.classList.add('cell');
   cell.style.width = `${cellWidth}px`;
   cell.style.height = `${cellWidth}px`;
+  cell.addEventListener('mouseover', colorBackgroundOnHover);
   canvas.appendChild(cell);
   return cell;
 }
@@ -22,6 +22,10 @@ function createGrid() {
   for (let i = 0; i < gridSize ** 2; i++) {
     createCell(cellWidth);
   }
+}
+
+function colorBackgroundOnHover(event) {
+  event.currentTarget.style.backgroundColor = 'black';
 }
 
 createGrid();

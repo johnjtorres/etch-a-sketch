@@ -67,7 +67,3 @@ body {
   background-color: var(--secondary);
   filter: drop-shadow(0.5rem 0.5rem 0.2rem);
 }
-
-.cell {
-  border: 1px solid black;
-}
