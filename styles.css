@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+  background-color: rgb(226 226 226);
+}
+
+.etch-a-sketch-ctn {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-size: 6rem;
+  color: red;
+}
