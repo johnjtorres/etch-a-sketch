@@ -2,6 +2,7 @@
 
 const canvas = document.querySelector('.etch-a-sketch-canvas');
 const canvasWidth = canvas.offsetWidth;
+const gridSizeBanner = document.querySelector('.grid-size');
 let gridSize = 16;
 
 const clearGridKnob = document.querySelector('.clear-grid');
@@ -39,4 +40,9 @@ function clearGrid() {
   });
 }
 
+function updateGridSizeBanner() {
+  gridSizeBanner.textContent = `${gridSize}x${gridSize}`;
+}
+
+updateGridSizeBanner();
 createGrid();

@@ -29,10 +29,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
   padding-top: 3.5rem;
+  padding-bottom: 2.5rem;
   width: 50rem;
-  height: 50rem;
   background-color: var(--primary);
   border-radius: 2rem;
   filter: drop-shadow(0.5rem 0.5rem 1rem);
@@ -44,12 +43,18 @@ body {
   flex-wrap: wrap;
 }
 
+.grid-size {
+  font-size: 2rem;
+  color: var(--tertiary);
+}
+
 .etch-a-sketch-canvas {
   width: 75%;
   aspect-ratio: 1 1;
   background-color: gray;
   display: flex;
   flex-wrap: wrap;
+  margin: 0.5rem 0 2rem 0;
 }
 
 .controls {
