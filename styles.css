@@ -14,10 +14,19 @@ body {
 
 .etch-a-sketch-ctn {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
   font-size: 6rem;
   color: red;
+}
+
+.etch-a-sketch {
+  display: flex;
+  flex: none;
+  border: 2px solid red;
+  width: 40rem;
+  height: 40rem;
 }
