@@ -76,13 +76,7 @@ body {
 .knob.adjust-grid,
 .knob.clear-grid {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
-  min-width: 0;
-}
-
-.knob > * {
-  margin: 0;
 }
