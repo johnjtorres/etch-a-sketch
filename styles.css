@@ -72,3 +72,10 @@ body {
   background-color: var(--secondary);
   filter: drop-shadow(0.5rem 0.5rem 0.2rem);
 }
+
+.knob.clear-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
