@@ -1,5 +1,7 @@
 'use strict';
 
+const MAX_CANVAS_SIZE = 100;
+const MIN_CANVAS_SIZE = 16;
 const canvas = document.querySelector('.etch-a-sketch-canvas');
 const canvasWidth = canvas.offsetWidth;
 const gridSizeBanner = document.querySelector('.grid-size');
@@ -23,6 +25,7 @@ function createCell(cellWidth) {
 }
 
 function createGrid() {
+  removeAllCells();
   const cellWidth = calculateCellWidth();
   for (let i = 0; i < gridSize ** 2; i++) {
     createCell(cellWidth);
@@ -40,8 +43,22 @@ function clearGrid() {
   });
 }
 
+function removeAllCells() {
+  while (canvas.firstChild) {
+    canvas.removeChild(canvas.firstChild);
+  }
+}
+
 function updateGridSizeBanner() {
   gridSizeBanner.textContent = `${gridSize}x${gridSize}`;
+}
+
+function changeGridSize(size) {
+  gridSize = size;
+  if (size < MIN_CANVAS_SIZE || isNaN(size)) gridSize = MIN_CANVAS_SIZE;
+  if (size > MAX_CANVAS_SIZE) gridSize = MAX_CANVAS_SIZE;
+  updateGridSizeBanner();
+  createGrid();
 }
 
 updateGridSizeBanner();
