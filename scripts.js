@@ -24,7 +24,8 @@ function createCell(cellWidth) {
   cell.classList.add('cell');
   cell.style.width = `${cellWidth}px`;
   cell.style.height = `${cellWidth}px`;
-  cell.addEventListener('mouseover', colorBackgroundOnHover);
+  cell.addEventListener('mouseover', colorCellBackground);
+  cell.addEventListener('click', colorCellBackground);
   canvas.appendChild(cell);
   return cell;
 }
@@ -37,7 +38,8 @@ function createGrid() {
   }
 }
 
-function colorBackgroundOnHover(event) {
+function colorCellBackground(event) {
+  if (event.buttons !== 1 && event.type !== 'click') return;
   event.currentTarget.style.backgroundColor = 'black';
 }
 
