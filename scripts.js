@@ -3,7 +3,7 @@
 const MAX_CANVAS_SIZE = 100;
 const MIN_CANVAS_SIZE = 16;
 const canvas = document.querySelector('.etch-a-sketch-canvas');
-const canvasWidth = canvas.offsetWidth;
+const canvasWidth = canvas.clientWidth;
 const gridSizeBanner = document.querySelector('.grid-size');
 let gridSize = 16;
 
