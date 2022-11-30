@@ -10,6 +10,11 @@ let gridSize = 16;
 const clearGridKnob = document.querySelector('.clear-grid');
 clearGridKnob.addEventListener('click', clearGrid);
 
+const adjustGridKnob = document.querySelector('.adjust-grid');
+adjustGridKnob.addEventListener('click', () => {
+  adjustGridSize(promptGridSize());
+});
+
 function calculateCellWidth() {
   return canvasWidth / gridSize;
 }
@@ -53,12 +58,16 @@ function updateGridSizeBanner() {
   gridSizeBanner.textContent = `${gridSize}x${gridSize}`;
 }
 
-function changeGridSize(size) {
+function adjustGridSize(size) {
   gridSize = size;
   if (size < MIN_CANVAS_SIZE || isNaN(size)) gridSize = MIN_CANVAS_SIZE;
   if (size > MAX_CANVAS_SIZE) gridSize = MAX_CANVAS_SIZE;
   updateGridSizeBanner();
   createGrid();
+}
+
+function promptGridSize() {
+  return parseInt(prompt('Enter a grid size (16 - 100):'));
 }
 
 updateGridSizeBanner();
