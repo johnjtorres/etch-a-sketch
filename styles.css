@@ -83,6 +83,10 @@ body {
   font-size: 2rem;
 }
 
+.knob:hover {
+  background-color: rgb(196, 196, 196);
+}
+
 .cell {
   flex-grow: 1;
 }
