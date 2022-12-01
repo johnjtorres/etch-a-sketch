@@ -15,6 +15,14 @@ adjustGridKnob.addEventListener('click', () => {
   adjustGridSize(promptGridSize());
 });
 
+const modes = document.querySelectorAll('input[name=mode]');
+
+function getModeSetting() {
+  for (const mode of modes) {
+    if (mode.checked) return mode.value;
+  }
+}
+
 function calculateCellWidth() {
   return canvasWidth / gridSize;
 }
