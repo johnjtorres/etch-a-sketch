@@ -5,7 +5,7 @@ const MIN_CANVAS_SIZE = 16;
 const canvas = document.querySelector('.etch-a-sketch-canvas');
 const canvasWidth = canvas.clientWidth;
 const gridSizeBanner = document.querySelector('.grid-size');
-let gridSize = 16;
+let gridSize = MIN_CANVAS_SIZE;
 
 const clearGridKnob = document.querySelector('.clear-grid');
 clearGridKnob.addEventListener('click', clearGrid);
