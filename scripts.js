@@ -17,7 +17,7 @@ adjustGridKnob.addEventListener('click', () => {
 
 const modes = document.querySelectorAll('input[name=mode]');
 
-function getModeSetting() {
+function getCurrentMode() {
   for (const mode of modes) {
     if (mode.checked) return mode.value;
   }
@@ -25,6 +25,14 @@ function getModeSetting() {
 
 function calculateCellWidth() {
   return canvasWidth / gridSize;
+}
+
+function getRandom255() {
+  return Math.floor(Math.random() * 256);
+}
+
+function getRandomRGB() {
+  return `rgb(${getRandom255()} ${getRandom255()} ${getRandom255()})`;
 }
 
 function createCell(cellWidth) {
@@ -48,7 +56,9 @@ function createGrid() {
 
 function colorCellBackground(event) {
   if (event.buttons !== 1 && event.type !== 'click') return;
-  event.currentTarget.style.backgroundColor = 'black';
+  let color = 'black';
+  if (getCurrentMode() === 'rgb') color = getRandomRGB();
+  event.currentTarget.style.backgroundColor = color;
 }
 
 function clearGrid() {
